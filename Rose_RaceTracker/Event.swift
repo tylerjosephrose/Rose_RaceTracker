@@ -11,8 +11,8 @@ import UIKit
 class Event: NSObject, NSCoding {
 	private var eventType: String!
 	private var races = [Race]()
-	private var personalRecord: time_t?
-	private var seasonBest = [Int : time_t]()
+	private var personalRecord: TimeInterval?
+	private var seasonBest = [Int : TimeInterval]()
 	private let calendar = Calendar.current
 	
 	init(type: String) {
@@ -25,16 +25,24 @@ class Event: NSObject, NSCoding {
 		return eventType
 	}
 	
-	func getPR() -> time_t {
+	func getPR() -> TimeInterval {
 		return personalRecord!
 	}
 	
-	func getSB() -> [Int: time_t] {
+	func getSB() -> [Int: TimeInterval] {
 		return seasonBest
+	}
+	
+	func getRaces() -> [Race] {
+		return races
 	}
 	
 	func getCountOfRaces() -> Int {
 		return races.count
+	}
+	
+	func getNumOfYears() -> Int {
+		return seasonBest.count
 	}
 	
 	func add(race: Race) {
@@ -92,7 +100,7 @@ class Event: NSObject, NSCoding {
 	required init?(coder aDecoder: NSCoder) {
 		eventType = aDecoder.decodeObject(forKey: "eventType") as! String
 		races = aDecoder.decodeObject(forKey: "races") as! [Race]
-		personalRecord = aDecoder.decodeObject(forKey: "personalRecord") as? time_t
-		seasonBest = aDecoder.decodeObject(forKey: "seasonBest") as! [Int : time_t]
+		personalRecord = aDecoder.decodeObject(forKey: "personalRecord") as? TimeInterval
+		seasonBest = aDecoder.decodeObject(forKey: "seasonBest") as! [Int : TimeInterval]
 	}
 }

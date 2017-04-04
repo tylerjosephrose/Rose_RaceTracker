@@ -13,10 +13,10 @@ class Race: NSObject, NSCoding {
 	private var meetDate: Date!
 	private var meetLocation: String!
 	private var eventType: String!
-	private var raceTime: time_t!
+	private var raceTime: TimeInterval!
 	private var racePlace: Int?
 	
-	init(date: Date, location: String, event: String, time: time_t) {
+	init(date: Date, location: String, event: String, time: TimeInterval) {
 		super.init()
 		
 		meetDate = date
@@ -25,7 +25,7 @@ class Race: NSObject, NSCoding {
 		raceTime = time
 	}
 	
-	init(date: Date, location: String, event: String, time: time_t, place: Int) {
+	init(date: Date, location: String, event: String, time: TimeInterval, place: Int) {
 		super.init()
 		
 		meetDate = date
@@ -35,7 +35,7 @@ class Race: NSObject, NSCoding {
 		racePlace = place
 	}
 	
-	func getTime() -> time_t {
+	func getTime() -> TimeInterval {
 		return raceTime
 	}
 	
@@ -55,6 +55,22 @@ class Race: NSObject, NSCoding {
 		return racePlace!
 	}
 	
+	static func timeToString(time: TimeInterval) -> String {
+		let hours = floor(time/3600)
+		let minutes = floor(time / 60) - hours * 60
+		let seconds = time - hours * 3600 - minutes * 60
+		print("Hours: " + String(hours))
+		print("Minutes: " + String(minutes))
+		print("Seconds: " + String(seconds))
+		if hours > 0 {
+			return String(Int(hours)) + ":" + String(Int(minutes)) + ":" + String(format:"%.2f", seconds)
+		} else if minutes > 0 {
+			return String(Int(minutes)) + ":" + String(format:"%.2f", seconds)
+		} else {
+			return String(format:"%.2f", seconds)
+		}
+	}
+	
 	// Encoding/Decoding
 	func encode(with aCoder: NSCoder) {
 		aCoder.encode(meetDate, forKey: "meetDate")
@@ -68,7 +84,7 @@ class Race: NSObject, NSCoding {
 		meetDate = aDecoder.decodeObject(forKey: "meetDate") as! Date
 		meetLocation = aDecoder.decodeObject(forKey: "meetLocation") as! String
 		eventType = aDecoder.decodeObject(forKey: "eventType") as! String
-		raceTime = aDecoder.decodeObject(forKey: "raceTime") as! time_t
+		raceTime = aDecoder.decodeObject(forKey: "raceTime") as! TimeInterval
 		racePlace = aDecoder.decodeObject(forKey: "racePlace") as? Int
 	}
 	
