@@ -59,9 +59,6 @@ class Race: NSObject, NSCoding {
 		let hours = floor(time/3600)
 		let minutes = floor(time / 60) - hours * 60
 		let seconds = time - hours * 3600 - minutes * 60
-		print("Hours: " + String(hours))
-		print("Minutes: " + String(minutes))
-		print("Seconds: " + String(seconds))
 		if hours > 0 {
 			return String(Int(hours)) + ":" + String(Int(minutes)) + ":" + String(format:"%.2f", seconds)
 		} else if minutes > 0 {

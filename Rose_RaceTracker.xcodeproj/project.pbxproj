@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */; };
-		9AC085EB1E93ED7D00C8D687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC085EA1E93ED7D00C8D687 /* ViewController.swift */; };
 		9AC085EE1E93ED7D00C8D687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC085EC1E93ED7D00C8D687 /* Main.storyboard */; };
 		9AC085F01E93ED7D00C8D687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC085EF1E93ED7D00C8D687 /* Assets.xcassets */; };
 		9AC085F31E93ED7D00C8D687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC085F11E93ED7D00C8D687 /* LaunchScreen.storyboard */; };
@@ -17,12 +16,13 @@
 		9AC085FF1E93FE5A00C8D687 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC085FE1E93FE5A00C8D687 /* Person.swift */; };
 		9AC086011E94052B00C8D687 /* DateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC086001E94052B00C8D687 /* DateTableViewController.swift */; };
 		9AC086031E94199000C8D687 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC086021E94199000C8D687 /* DateTableViewCell.swift */; };
+		9AC086051E9440A800C8D687 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC086041E9440A800C8D687 /* EventTableViewController.swift */; };
+		9AC086071E9440BC00C8D687 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC086061E9440BC00C8D687 /* NewEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9AC085E51E93ED7D00C8D687 /* Rose_RaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rose_RaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AC085EA1E93ED7D00C8D687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9AC085ED1E93ED7D00C8D687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AC085EF1E93ED7D00C8D687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AC085F21E93ED7D00C8D687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +32,8 @@
 		9AC085FE1E93FE5A00C8D687 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		9AC086001E94052B00C8D687 /* DateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewController.swift; sourceTree = "<group>"; };
 		9AC086021E94199000C8D687 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		9AC086041E9440A800C8D687 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		9AC086061E9440BC00C8D687 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */,
-				9AC085EA1E93ED7D00C8D687 /* ViewController.swift */,
 				9AC085EC1E93ED7D00C8D687 /* Main.storyboard */,
+				9AC086041E9440A800C8D687 /* EventTableViewController.swift */,
+				9AC086061E9440BC00C8D687 /* NewEventViewController.swift */,
 				9AC086021E94199000C8D687 /* DateTableViewCell.swift */,
 				9AC086001E94052B00C8D687 /* DateTableViewController.swift */,
 				9AC085EF1E93ED7D00C8D687 /* Assets.xcassets */,
@@ -154,9 +157,10 @@
 			files = (
 				9AC086031E94199000C8D687 /* DateTableViewCell.swift in Sources */,
 				9AC085FF1E93FE5A00C8D687 /* Person.swift in Sources */,
+				9AC086071E9440BC00C8D687 /* NewEventViewController.swift in Sources */,
 				9AC086011E94052B00C8D687 /* DateTableViewController.swift in Sources */,
 				9AC085FD1E93F56500C8D687 /* Event.swift in Sources */,
-				9AC085EB1E93ED7D00C8D687 /* ViewController.swift in Sources */,
+				9AC086051E9440A800C8D687 /* EventTableViewController.swift in Sources */,
 				9AC085FB1E93F12100C8D687 /* Race.swift in Sources */,
 				9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */,
 			);

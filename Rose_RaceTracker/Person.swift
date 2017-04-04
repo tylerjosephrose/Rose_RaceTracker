@@ -50,14 +50,20 @@ class Person: NSObject {
 	
 	func addEvent(event: Event) {
 		events.append(event)
+		saveEvents()
+	}
+	
+	func removeEvent(atIndex i: Int) {
+		events.remove(at: i)
+		saveEvents()
 	}
 	
 	private func loadPerson() {
 		let fileURL = getFileURL()
-		/*if (FileManager.default.fileExists(atPath: fileURL.path)) {
+		if (FileManager.default.fileExists(atPath: fileURL.path)) {
 			// Load Contents
 			events = NSKeyedUnarchiver.unarchiveObject(withFile: fileURL.path) as! [Event]
-		} else {*/
+		} else {
 			// Create events
 			let e1 = Event(type: "400m")
 			let e2 = Event(type: "1600m")
@@ -91,8 +97,8 @@ class Person: NSObject {
 			time = 1037.14
 			e3.add(race: Race(date: date!, location: "MAC", event: e3.getType(), time: time, place: 13))
 			events.append(e3)
-			saveContacts()
-		//}
+			saveEvents()
+		}
 	}
 	
 	private func sortRaces() {
@@ -113,7 +119,7 @@ class Person: NSObject {
 		return fileURL
 	}
 	
-	private func saveContacts() {
+	private func saveEvents() {
 		let fileURL = getFileURL()
 		NSKeyedArchiver.archiveRootObject(events, toFile: fileURL.path)
 	}

@@ -25,8 +25,8 @@ class Event: NSObject, NSCoding {
 		return eventType
 	}
 	
-	func getPR() -> TimeInterval {
-		return personalRecord!
+	func getPR() -> TimeInterval? {
+		return personalRecord
 	}
 	
 	func getSB() -> [Int: TimeInterval] {
