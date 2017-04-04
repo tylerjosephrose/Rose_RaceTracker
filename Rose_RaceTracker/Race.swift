@@ -68,6 +68,15 @@ class Race: NSObject, NSCoding {
 		}
 	}
 	
+	static func ==(left: Race, right: Race) -> Bool {
+		if left.getTime() == right.getTime() && left.getLocation() == right.getLocation() && left.getEvent() == right.getEvent() && left.getDate() == right.getDate() && left.getPlace() == right.getPlace() {
+			return true
+		}
+		else {
+			return false
+		}
+	}
+	
 	// Encoding/Decoding
 	func encode(with aCoder: NSCoder) {
 		aCoder.encode(meetDate, forKey: "meetDate")

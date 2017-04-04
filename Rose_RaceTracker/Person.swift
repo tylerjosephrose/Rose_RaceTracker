@@ -10,7 +10,6 @@ import UIKit
 
 class Person: NSObject {
 	private var events = [Event]()
-	private var races = [Race]()
 	private var racesByDate = [Int : [Race] ]()
 	private static var instance: Person?
 	
@@ -24,25 +23,19 @@ class Person: NSObject {
 		return events
 	}
 	
-	private func getRaces() {
-		for event in events {
-			races.append(contentsOf: event.getRaces())
-		}
-		sortRaces()
-	}
-	
 	func getCountOfEvents() -> Int {
 		return events.count
 	}
 	
 	func getRacesByDate() -> [Int : [Race] ] {
-		getRaces()
-		for race in races {
-			let year = Calendar.current.component(.year, from: race.getDate())
-			if racesByDate[year] == nil {
-				racesByDate[year] = [race]
-			} else {
-				racesByDate[year]?.append(race)
+		for event in events {
+			for race in event.getRaces() {
+				let year = Calendar.current.component(.year, from: race.getDate())
+				if racesByDate[year] == nil {
+					racesByDate[year] = [race]
+				} else if !(racesByDate[year]?.contains(race))! {
+					racesByDate[year]?.append(race)
+				}
 			}
 		}
 		return racesByDate
@@ -54,14 +47,26 @@ class Person: NSObject {
 	}
 	
 	func removeEvent(atIndex i: Int) {
-		events.remove(at: i)
+		let tempEvent = events.remove(at: i)
+		for race in tempEvent.getRaces() {
+			let year = Calendar.current.component(.year, from: race.getDate())
+			let index = racesByDate[year]?.index(of: race)
+			racesByDate[year]?.remove(at: index!)
+		}
 		saveEvents()
 	}
 	
 	private func loadPerson() {
 		let fileURL = getFileURL()
+		
+		/*do {
+			try FileManager.default.removeItem(at: fileURL)
+		} catch _ as NSError {
+			print("Deletion failed")
+		}*/
 		if (FileManager.default.fileExists(atPath: fileURL.path)) {
 			// Load Contents
+			//events.removeAll()
 			events = NSKeyedUnarchiver.unarchiveObject(withFile: fileURL.path) as! [Event]
 		} else {
 			// Create events
@@ -98,18 +103,6 @@ class Person: NSObject {
 			e3.add(race: Race(date: date!, location: "MAC", event: e3.getType(), time: time, place: 13))
 			events.append(e3)
 			saveEvents()
-		}
-	}
-	
-	private func sortRaces() {
-		races.sort(by: sortDateInternal(r1:r2:))
-	}
-	
-	private func sortDateInternal(r1: Race, r2: Race) -> Bool {
-		if r1.getDate() == r2.getDate() {
-			return r1.getTime() < r2.getTime()
-		} else {
-			return r1.getDate() < r2.getDate()
 		}
 	}
 	

@@ -65,8 +65,22 @@ class EventTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
-			person?.removeEvent(atIndex: indexPath.row)
-			tableView.deleteRows(at: [indexPath], with: .fade)
+			if (person?.getEvents()[indexPath.row].getCountOfRaces())! > 0 {
+				let alert = UIAlertController()
+				alert.title = "Are you sure you want to delete?"
+				alert.message = "This event has races stored within it"
+				let okay = UIAlertAction(title: "Continue", style: .default, handler: { (action: UIAlertAction!) in
+					self.person?.removeEvent(atIndex: indexPath.row)
+					tableView.deleteRows(at: [indexPath], with: .fade)
+				})
+				let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+				alert.addAction(okay)
+				alert.addAction(cancel)
+				present(alert, animated: true, completion: nil)
+			} else {
+				person?.removeEvent(atIndex: indexPath.row)
+				tableView.deleteRows(at: [indexPath], with: .fade)
+			}
 		}
     }
 
