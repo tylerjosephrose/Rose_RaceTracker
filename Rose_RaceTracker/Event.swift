@@ -52,6 +52,10 @@ class Event: NSObject, NSCoding {
 		determineSB()
 	}
 	
+	func removeRace(at i: Int) {
+		races.remove(at: i)
+	}
+	
 	private func sortByDate() {
 		races.sort(by: sortDateInternal(r1:r2:))
 	}

@@ -1,17 +1,16 @@
 //
-//  DateTableViewController.swift
+//  RaceTableViewController.swift
 //  Rose_RaceTracker
 //
-//  Created by Tyler Rose on 4/4/17.
+//  Created by Tyler Rose on 4/5/17.
 //  Copyright © 2017 Tyler Rose. All rights reserved.
 //
 
 import UIKit
 
-class DateTableViewController: UITableViewController {
+class RaceTableViewController: UITableViewController {
 	
-	private let person = Person.getInstance()
-	private var races = [(key: Int, value: [Race])]()
+	var event: Event!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,86 +19,63 @@ class DateTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
-		
-		races = person.getRacesByDate()
+		self.navigationItem.leftItemsSupplementBackButton = true
+		self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
-	
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return races.count
+        return 1
     }
-	
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		var i = races.count - 1
-		for years in races {
-			if i == section {
-				return String(years.key)
-			}
-			i -= 1
-		}
-		print("Some error occurred in titleForHeaderInSection in DataTableViewController")
-		return ""
-	}
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-		var i = races.count - 1
-		for years in races {
-			if i == section {
-				return years.value.count
-			}
-			i -= 1
-		}
-        //return (races[section]?.count)!
-		print("Some error occurred in nuberOfRowsInSection for DateTableViewController")
-		return 0
+        return event.getCountOfRaces()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RaceCell", for: indexPath) as! DateTableViewCell
 		
-		var i = races.count - 1
-		for years in races {
-			if i == indexPath.section {
-				var j = 0
-				for race in years.value {
-					if j == indexPath.row {
-						cell.timeLbl.text = Race.timeToString(time: race.getTime())
-						cell.meetLbl.text = race.getLocation()
-						cell.eventLbl.text = race.getEvent()
-					}
-					j += 1
+		var i = 0
+		for race in event.getRaces() {
+			if i == indexPath.row {
+				cell.timeLbl.text = Race.timeToString(time: race.getTime())
+				cell.meetLbl.text = race.getLocation()
+				if race.getPlace() != nil {
+					cell.eventLbl.text = Race.placeToString(place: race.getPlace()!)
+				} else {
+					cell.eventLbl.text = ""
 				}
 			}
-			i -= 1
+			i += 1
 		}
-		
+
         return cell
     }
 
-	/*
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-	*/
+    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+			Person.getInstance().removeRace(event: event, atIndex: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.

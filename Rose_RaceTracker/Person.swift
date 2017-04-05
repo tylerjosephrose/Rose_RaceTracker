@@ -27,7 +27,7 @@ class Person: NSObject {
 		return events.count
 	}
 	
-	func getRacesByDate() -> [Int : [Race] ] {
+	func getRacesByDate() -> [(key: Int, value: [Race])] {
 		for event in events {
 			for race in event.getRaces() {
 				let year = Calendar.current.component(.year, from: race.getDate())
@@ -38,7 +38,7 @@ class Person: NSObject {
 				}
 			}
 		}
-		return racesByDate
+		return racesByDate.sorted(by: {$0.0 < $1.0})
 	}
 	
 	func addEvent(event: Event) {
@@ -53,6 +53,11 @@ class Person: NSObject {
 			let index = racesByDate[year]?.index(of: race)
 			racesByDate[year]?.remove(at: index!)
 		}
+		saveEvents()
+	}
+	
+	func removeRace(event e: Event, atIndex i: Int) {
+		e.removeRace(at: i)
 		saveEvents()
 	}
 	

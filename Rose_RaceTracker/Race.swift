@@ -51,8 +51,20 @@ class Race: NSObject, NSCoding {
 		return eventType
 	}
 	
-	func getPlace() -> Int {
-		return racePlace!
+	func getPlace() -> Int? {
+		return racePlace
+	}
+	
+	static func placeToString(place: Int) -> String {
+		if place % 10 == 1 {
+			return String(place) + "st"
+		} else if place % 10 == 2 {
+			return String(place) + "nd"
+		} else if place % 10 == 3 {
+			return String(place) + "rd"
+		} else {
+			return String(place) + "th"
+		}
 	}
 	
 	static func timeToString(time: TimeInterval) -> String {

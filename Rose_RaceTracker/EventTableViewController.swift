@@ -99,15 +99,18 @@ class EventTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+		if segue.identifier == "RaceSegue" {
+			let selectedEvent = person?.getEvents()[(tableView.indexPathForSelectedRow?.row)!]
+			//let navController = segue.destination as! UINavigationController
+			//let destination = navController.viewControllers.first as! RaceTableViewController
+			let destination = segue.destination as! RaceTableViewController
+			destination.event = selectedEvent
+		}
     }
-    */
 	
 	@IBAction func cancel(segue: UIStoryboardSegue) {
 		dismiss(animated: true, completion: nil)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AB66BB41E952F260088368A /* NewRaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB31E952F260088368A /* NewRaceViewController.swift */; };
+		9AB66BB61E952F340088368A /* RaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB51E952F340088368A /* RaceTableViewController.swift */; };
 		9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */; };
 		9AC085EE1E93ED7D00C8D687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC085EC1E93ED7D00C8D687 /* Main.storyboard */; };
 		9AC085F01E93ED7D00C8D687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC085EF1E93ED7D00C8D687 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9AB66BB31E952F260088368A /* NewRaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRaceViewController.swift; sourceTree = "<group>"; };
+		9AB66BB51E952F340088368A /* RaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceTableViewController.swift; sourceTree = "<group>"; };
 		9AC085E51E93ED7D00C8D687 /* Rose_RaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rose_RaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AC085ED1E93ED7D00C8D687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 			children = (
 				9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */,
 				9AC085EC1E93ED7D00C8D687 /* Main.storyboard */,
+				9AB66BB31E952F260088368A /* NewRaceViewController.swift */,
+				9AB66BB51E952F340088368A /* RaceTableViewController.swift */,
 				9AC086041E9440A800C8D687 /* EventTableViewController.swift */,
 				9AC086061E9440BC00C8D687 /* NewEventViewController.swift */,
 				9AC086021E94199000C8D687 /* DateTableViewCell.swift */,
@@ -158,6 +164,8 @@
 				9AC086031E94199000C8D687 /* DateTableViewCell.swift in Sources */,
 				9AC085FF1E93FE5A00C8D687 /* Person.swift in Sources */,
 				9AC086071E9440BC00C8D687 /* NewEventViewController.swift in Sources */,
+				9AB66BB41E952F260088368A /* NewRaceViewController.swift in Sources */,
+				9AB66BB61E952F340088368A /* RaceTableViewController.swift in Sources */,
 				9AC086011E94052B00C8D687 /* DateTableViewController.swift in Sources */,
 				9AC085FD1E93F56500C8D687 /* Event.swift in Sources */,
 				9AC086051E9440A800C8D687 /* EventTableViewController.swift in Sources */,
@@ -326,6 +334,7 @@
 				9AC085F91E93ED7D00C8D687 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
