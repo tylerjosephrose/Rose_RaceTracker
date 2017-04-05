@@ -28,12 +28,13 @@ class Person: NSObject {
 	}
 	
 	func getRacesByDate() -> [(key: Int, value: [Race])] {
+		racesByDate.removeAll()
 		for event in events {
 			for race in event.getRaces() {
 				let year = Calendar.current.component(.year, from: race.getDate())
 				if racesByDate[year] == nil {
 					racesByDate[year] = [race]
-				} else if !(racesByDate[year]?.contains(race))! {
+				} else {
 					racesByDate[year]?.append(race)
 				}
 			}
@@ -47,17 +48,7 @@ class Person: NSObject {
 	}
 	
 	func removeEvent(atIndex i: Int) {
-		let tempEvent = events.remove(at: i)
-		for race in tempEvent.getRaces() {
-			let year = Calendar.current.component(.year, from: race.getDate())
-			let index = racesByDate[year]?.index(of: race)
-			racesByDate[year]?.remove(at: index!)
-		}
-		saveEvents()
-	}
-	
-	func removeRace(event e: Event, atIndex i: Int) {
-		e.removeRace(at: i)
+		events.remove(at: i)
 		saveEvents()
 	}
 	
@@ -117,7 +108,7 @@ class Person: NSObject {
 		return fileURL
 	}
 	
-	private func saveEvents() {
+	func saveEvents() {
 		let fileURL = getFileURL()
 		NSKeyedArchiver.archiveRootObject(events, toFile: fileURL.path)
 	}

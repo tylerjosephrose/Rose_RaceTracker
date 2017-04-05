@@ -46,6 +46,7 @@ class RaceTableViewController: UITableViewController {
 		var i = 0
 		for race in event.getRaces() {
 			if i == indexPath.row {
+				print(Race.timeToString(time: race.getTime()))
 				cell.timeLbl.text = Race.timeToString(time: race.getTime())
 				cell.meetLbl.text = race.getLocation()
 				if race.getPlace() != nil {
@@ -72,7 +73,7 @@ class RaceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-			Person.getInstance().removeRace(event: event, atIndex: indexPath.row)
+			event.removeRace(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -92,14 +93,22 @@ class RaceTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+		if segue.identifier == "NewRace" {
+			let navVC = segue.destination as! UINavigationController
+			let destination = navVC.viewControllers.first as! NewRaceViewController
+			destination.currentEvent = event
+		}
     }
-    */
-
+	
+	@IBAction func save(race segue: UIStoryboardSegue) {
+		//let source = segue.source as! NewRaceViewController
+		//let newRace = source.event
+		//Person.getInstance().addEvent(event: newEvent!)
+		tableView.reloadData()
+		dismiss(animated: true, completion: nil)
+	}
 }

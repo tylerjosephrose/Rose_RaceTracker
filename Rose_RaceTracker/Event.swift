@@ -50,10 +50,13 @@ class Event: NSObject, NSCoding {
 		sortByDate()
 		determinePR()
 		determineSB()
+		Person.getInstance().saveEvents()
 	}
 	
 	func removeRace(at i: Int) {
 		races.remove(at: i)
+		determinePR()
+		Person.getInstance().saveEvents()
 	}
 	
 	private func sortByDate() {
@@ -69,6 +72,9 @@ class Event: NSObject, NSCoding {
 	}
 	
 	private func determinePR() {
+		if races.count == 0 {
+			personalRecord = nil
+		}
 		if races.count == 1 {
 			personalRecord = races[0].getTime()
 		}

@@ -70,13 +70,14 @@ class Race: NSObject, NSCoding {
 	static func timeToString(time: TimeInterval) -> String {
 		let hours = floor(time/3600)
 		let minutes = floor(time / 60) - hours * 60
-		let seconds = time - hours * 3600 - minutes * 60
+		let seconds = floor(time) - hours * 3600 - minutes * 60
+		let milliseconds = round(time.truncatingRemainder(dividingBy: 1.0) * 100)
 		if hours > 0 {
-			return String(Int(hours)) + ":" + String(Int(minutes)) + ":" + String(format:"%.2f", seconds)
+			return String(Int(hours)) + ":" + String(format:"%02.0f", Int(minutes)) + ":" + String(format:"%02.0f", seconds) + "." + String(format: "%02.0f", milliseconds)
 		} else if minutes > 0 {
-			return String(Int(minutes)) + ":" + String(format:"%.2f", seconds)
+			return String(Int(minutes)) + ":" + String(format:"%02.0f", seconds) + "." + String(format:"%02.0f", milliseconds)
 		} else {
-			return String(format:"%.2f", seconds)
+			return String(Int(seconds)) + "." + String(format:"%02.0f", milliseconds)
 		}
 	}
 	
