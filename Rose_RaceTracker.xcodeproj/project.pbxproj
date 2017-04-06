@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A7A785B1E966C9000C19EEE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A785A1E966C9000C19EEE /* MainViewController.swift */; };
+		9A7A785D1E96735200C19EEE /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A785C1E96735200C19EEE /* StatsViewController.swift */; };
 		9AB66BB41E952F260088368A /* NewRaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB31E952F260088368A /* NewRaceViewController.swift */; };
 		9AB66BB61E952F340088368A /* RaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB51E952F340088368A /* RaceTableViewController.swift */; };
 		9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A7A785A1E966C9000C19EEE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9A7A785C1E96735200C19EEE /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		9AB66BB31E952F260088368A /* NewRaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRaceViewController.swift; sourceTree = "<group>"; };
 		9AB66BB51E952F340088368A /* RaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceTableViewController.swift; sourceTree = "<group>"; };
 		9AC085E51E93ED7D00C8D687 /* Rose_RaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rose_RaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,8 @@
 			children = (
 				9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */,
 				9AC085EC1E93ED7D00C8D687 /* Main.storyboard */,
+				9A7A785A1E966C9000C19EEE /* MainViewController.swift */,
+				9A7A785C1E96735200C19EEE /* StatsViewController.swift */,
 				9AB66BB31E952F260088368A /* NewRaceViewController.swift */,
 				9AB66BB51E952F340088368A /* RaceTableViewController.swift */,
 				9AC086041E9440A800C8D687 /* EventTableViewController.swift */,
@@ -162,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC086031E94199000C8D687 /* DateTableViewCell.swift in Sources */,
+				9A7A785B1E966C9000C19EEE /* MainViewController.swift in Sources */,
 				9AC085FF1E93FE5A00C8D687 /* Person.swift in Sources */,
 				9AC086071E9440BC00C8D687 /* NewEventViewController.swift in Sources */,
 				9AB66BB41E952F260088368A /* NewRaceViewController.swift in Sources */,
@@ -170,6 +177,7 @@
 				9AC085FD1E93F56500C8D687 /* Event.swift in Sources */,
 				9AC086051E9440A800C8D687 /* EventTableViewController.swift in Sources */,
 				9AC085FB1E93F12100C8D687 /* Race.swift in Sources */,
+				9A7A785D1E96735200C19EEE /* StatsViewController.swift in Sources */,
 				9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

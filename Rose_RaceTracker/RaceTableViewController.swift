@@ -27,6 +27,14 @@ class RaceTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		navigationController?.setToolbarHidden(false, animated: true)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		navigationController?.setToolbarHidden(true, animated: true)
+	}
 
     // MARK: - Table view data source
 
@@ -109,6 +117,11 @@ class RaceTableViewController: UITableViewController {
 		//let newRace = source.event
 		//Person.getInstance().addEvent(event: newEvent!)
 		tableView.reloadData()
+		dismiss(animated: true, completion: nil)
+	}
+	
+	@IBAction func cancel(race segue: UIStoryboardSegue) {
+		navigationController?.setToolbarHidden(false, animated: true)
 		dismiss(animated: true, completion: nil)
 	}
 }
