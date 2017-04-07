@@ -160,7 +160,7 @@
                     <toolbarItems>
                         <barButtonItem title="Stats" id="Yfs-GC-p7W">
                             <connections>
-                                <segue destination="fda-bU-liz" kind="show" id="auV-QQ-oah"/>
+                                <segue destination="fda-bU-liz" kind="show" identifier="StatsSegue" id="auV-QQ-oah"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="1806" y="-307"/>
         </scene>
-        <!--View Controller-->
+        <!--Stats View Controller-->
         <scene sceneID="Dw8-LB-kaF">
             <objects>
-                <viewController id="fda-bU-liz" sceneMemberID="viewController">
+                <viewController id="fda-bU-liz" customClass="StatsViewController" customModule="Rose_RaceTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zLA-yr-x1w"/>
                         <viewControllerLayoutGuide type="bottom" id="0d5-D6-bJR"/>
@@ -189,18 +189,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAX-0v-MiF">
-                                <rect key="frame" x="67" y="292" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAX-0v-MiF" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="225" width="343" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgz-wW-dYe">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SB" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aF-iu-iAh">
+                                <rect key="frame" x="16" y="101" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v1-ad-1Ye">
+                                <rect key="frame" x="16" y="510" width="343" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Meet
+Date
+Time
+Place</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="nAX-0v-MiF" id="c99-qD-B5k"/>
+                        <outlet property="meetDetailsLbl" destination="6v1-ad-1Ye" id="Npu-X6-1YC"/>
+                        <outlet property="prLbl" destination="Zgz-wW-dYe" id="pAs-RZ-UwW"/>
+                        <outlet property="sbLbl" destination="6aF-iu-iAh" id="sKn-SR-TT6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhb-QU-NzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="68"/>
+            <point key="canvasLocation" x="2600.8000000000002" y="67.916041979010501"/>
         </scene>
         <!--New Race View Controller-->
         <scene sceneID="NFk-Bp-b2l">

@@ -13,6 +13,8 @@ class Person: NSObject {
 	private var racesByDate = [Int : [Race] ]()
 	private static var instance: Person?
 	
+	static var firstInitialize = true
+	
 	override init() {
 		super.init()
 		
@@ -55,11 +57,11 @@ class Person: NSObject {
 	private func loadPerson() {
 		let fileURL = getFileURL()
 		
-		/*do {
+		do {
 			try FileManager.default.removeItem(at: fileURL)
 		} catch _ as NSError {
 			print("Deletion failed")
-		}*/
+		}
 		if (FileManager.default.fileExists(atPath: fileURL.path)) {
 			// Load Contents
 			//events.removeAll()
@@ -97,6 +99,14 @@ class Person: NSObject {
 			date = Calendar.current.date(from: dateComponents)
 			time = 1037.14
 			e3.add(race: Race(date: date!, location: "MAC", event: e3.getType(), time: time, place: 13))
+			dateComponents.day = 20
+			date = Calendar.current.date(from: dateComponents)
+			time = 1067.36
+			e3.add(race: Race(date: date!, location: "Districts", event: e3.getType(), time: time, place: 14))
+			dateComponents.day = 27
+			date = Calendar.current.date(from: dateComponents)
+			time = 1068.09
+			e3.add(race: Race(date: date!, location: "Regionals", event: e3.getType(), time: time, place: 33))
 			events.append(e3)
 			saveEvents()
 		}
@@ -116,6 +126,7 @@ class Person: NSObject {
 	static func getInstance() -> Person {
 		if instance == nil {
 			instance = Person()
+			firstInitialize = false
 		}
 		return instance!
 	}

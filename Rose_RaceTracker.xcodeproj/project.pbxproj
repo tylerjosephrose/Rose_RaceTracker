@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9A7A785B1E966C9000C19EEE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A785A1E966C9000C19EEE /* MainViewController.swift */; };
 		9A7A785D1E96735200C19EEE /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A785C1E96735200C19EEE /* StatsViewController.swift */; };
+		9A7A787B1E967BBC00C19EEE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7A78781E967B9100C19EEE /* Charts.framework */; };
+		9A7A787C1E967BBC00C19EEE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7A78781E967B9100C19EEE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A7A78841E96AB5000C19EEE /* ElapsedTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A78831E96AB5000C19EEE /* ElapsedTimeFormatter.swift */; };
 		9AB66BB41E952F260088368A /* NewRaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB31E952F260088368A /* NewRaceViewController.swift */; };
 		9AB66BB61E952F340088368A /* RaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB51E952F340088368A /* RaceTableViewController.swift */; };
 		9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */; };
@@ -24,9 +27,49 @@
 		9AC086071E9440BC00C8D687 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC086061E9440BC00C8D687 /* NewEventViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A7A78771E967B9100C19EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A7A78721E967B9100C19EEE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		9A7A78791E967B9100C19EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A7A78721E967B9100C19EEE /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		9A7A787D1E967BBC00C19EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A7A78721E967B9100C19EEE /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A7A787F1E967BBC00C19EEE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A7A787C1E967BBC00C19EEE /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9A7A785A1E966C9000C19EEE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9A7A785C1E96735200C19EEE /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		9A7A78721E967B9100C19EEE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		9A7A78831E96AB5000C19EEE /* ElapsedTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElapsedTimeFormatter.swift; sourceTree = "<group>"; };
 		9AB66BB31E952F260088368A /* NewRaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRaceViewController.swift; sourceTree = "<group>"; };
 		9AB66BB51E952F340088368A /* RaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceTableViewController.swift; sourceTree = "<group>"; };
 		9AC085E51E93ED7D00C8D687 /* Rose_RaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rose_RaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,12 +92,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A7A787B1E967BBC00C19EEE /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A7A78731E967B9100C19EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A78781E967B9100C19EEE /* Charts.framework */,
+				9A7A787A1E967B9100C19EEE /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9AC085DC1E93ED7D00C8D687 = {
 			isa = PBXGroup;
 			children = (
@@ -74,9 +127,11 @@
 		9AC085E71E93ED7D00C8D687 /* Rose_RaceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9A7A78721E967B9100C19EEE /* Charts.xcodeproj */,
 				9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */,
 				9AC085EC1E93ED7D00C8D687 /* Main.storyboard */,
 				9A7A785A1E966C9000C19EEE /* MainViewController.swift */,
+				9A7A78831E96AB5000C19EEE /* ElapsedTimeFormatter.swift */,
 				9A7A785C1E96735200C19EEE /* StatsViewController.swift */,
 				9AB66BB31E952F260088368A /* NewRaceViewController.swift */,
 				9AB66BB51E952F340088368A /* RaceTableViewController.swift */,
@@ -104,10 +159,12 @@
 				9AC085E11E93ED7D00C8D687 /* Sources */,
 				9AC085E21E93ED7D00C8D687 /* Frameworks */,
 				9AC085E31E93ED7D00C8D687 /* Resources */,
+				9A7A787F1E967BBC00C19EEE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9A7A787E1E967BBC00C19EEE /* PBXTargetDependency */,
 			);
 			name = Rose_RaceTracker;
 			productName = Rose_RaceTracker;
@@ -142,12 +199,35 @@
 			mainGroup = 9AC085DC1E93ED7D00C8D687;
 			productRefGroup = 9AC085E61E93ED7D00C8D687 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9A7A78731E967B9100C19EEE /* Products */;
+					ProjectRef = 9A7A78721E967B9100C19EEE /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9AC085E41E93ED7D00C8D687 /* Rose_RaceTracker */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9A7A78781E967B9100C19EEE /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 9A7A78771E967B9100C19EEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A7A787A1E967B9100C19EEE /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 9A7A78791E967B9100C19EEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9AC085E31E93ED7D00C8D687 /* Resources */ = {
@@ -167,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A7A78841E96AB5000C19EEE /* ElapsedTimeFormatter.swift in Sources */,
 				9AC086031E94199000C8D687 /* DateTableViewCell.swift in Sources */,
 				9A7A785B1E966C9000C19EEE /* MainViewController.swift in Sources */,
 				9AC085FF1E93FE5A00C8D687 /* Person.swift in Sources */,
@@ -183,6 +264,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A7A787E1E967BBC00C19EEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 9A7A787D1E967BBC00C19EEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9AC085EC1E93ED7D00C8D687 /* Main.storyboard */ = {
@@ -300,6 +389,7 @@
 		9AC085F81E93ED7D00C8D687 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QE6Y8UK8X6;
 				INFOPLIST_FILE = Rose_RaceTracker/Info.plist;
@@ -313,6 +403,7 @@
 		9AC085F91E93ED7D00C8D687 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QE6Y8UK8X6;
 				INFOPLIST_FILE = Rose_RaceTracker/Info.plist;

@@ -50,7 +50,9 @@ class Event: NSObject, NSCoding {
 		sortByDate()
 		determinePR()
 		determineSB()
-		Person.getInstance().saveEvents()
+		if Person.firstInitialize == false {
+			Person.getInstance().saveEvents()
+		}
 	}
 	
 	func removeRace(at i: Int) {

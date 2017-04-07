@@ -29,7 +29,9 @@ class RaceTableViewController: UITableViewController {
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
-		navigationController?.setToolbarHidden(false, animated: true)
+		if event.getCountOfRaces() > 0 {
+			navigationController?.setToolbarHidden(false, animated: true)
+		}
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -54,7 +56,6 @@ class RaceTableViewController: UITableViewController {
 		var i = 0
 		for race in event.getRaces() {
 			if i == indexPath.row {
-				print(Race.timeToString(time: race.getTime()))
 				cell.timeLbl.text = Race.timeToString(time: race.getTime())
 				cell.meetLbl.text = race.getLocation()
 				if race.getPlace() != nil {
@@ -108,6 +109,10 @@ class RaceTableViewController: UITableViewController {
 		if segue.identifier == "NewRace" {
 			let navVC = segue.destination as! UINavigationController
 			let destination = navVC.viewControllers.first as! NewRaceViewController
+			destination.currentEvent = event
+		}
+		if segue.identifier == "StatsSegue" {
+			let destination = segue.destination as! StatsViewController
 			destination.currentEvent = event
 		}
     }
