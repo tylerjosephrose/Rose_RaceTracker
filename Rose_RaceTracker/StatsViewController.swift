@@ -66,6 +66,8 @@ class StatsViewController: UIViewController, ChartViewDelegate {
 			times.append(race.getTime())
 			dates.append(race.getDate())
 		}
+		times.reverse()
+		dates.reverse()
 		
 		// Y Axis data
 		var yVals = [ChartDataEntry]()
