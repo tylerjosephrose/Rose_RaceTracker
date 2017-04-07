@@ -18,11 +18,11 @@ class MainViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		navigationController?.setToolbarHidden(true, animated: true)
-		navigationController?.setNavigationBarHidden(true, animated: true)
+		//navigationController?.setNavigationBarHidden(true, animated: true)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
-		navigationController?.setNavigationBarHidden(false, animated: true)
+		//navigationController?.setNavigationBarHidden(false, animated: true)
 	}
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +34,20 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-		navigationController?.setNavigationBarHidden(false, animated: true)
     }
+	
+	@IBAction func cancel(import: UIStoryboardSegue) {
+		dismiss(animated: true, completion: nil)
+	}
+	
+	@IBAction func add(import: UIStoryboardSegue) {
+		
+		dismiss(animated: true, completion: nil)
+	}
+	
+	@IBAction func replace(import: UIStoryboardSegue) {
+		
+		dismiss(animated: true, completion: nil)
+	}
 
 }

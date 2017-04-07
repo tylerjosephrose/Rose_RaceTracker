@@ -69,7 +69,7 @@ class Event: NSObject, NSCoding {
 		if r1.getDate() == r2.getDate() {
 			return r1.getTime() < r2.getTime()
 		} else {
-			return r1.getDate() < r2.getDate()
+			return r1.getDate() > r2.getDate()
 		}
 	}
 	

@@ -12,6 +12,7 @@
 		9A7A787B1E967BBC00C19EEE /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7A78781E967B9100C19EEE /* Charts.framework */; };
 		9A7A787C1E967BBC00C19EEE /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7A78781E967B9100C19EEE /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A7A78841E96AB5000C19EEE /* ElapsedTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A78831E96AB5000C19EEE /* ElapsedTimeFormatter.swift */; };
+		9A7A78881E97285F00C19EEE /* ImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A78871E97285F00C19EEE /* ImportViewController.swift */; };
 		9AB66BB41E952F260088368A /* NewRaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB31E952F260088368A /* NewRaceViewController.swift */; };
 		9AB66BB61E952F340088368A /* RaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB66BB51E952F340088368A /* RaceTableViewController.swift */; };
 		9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		9A7A785C1E96735200C19EEE /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		9A7A78721E967B9100C19EEE /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		9A7A78831E96AB5000C19EEE /* ElapsedTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElapsedTimeFormatter.swift; sourceTree = "<group>"; };
+		9A7A78871E97285F00C19EEE /* ImportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportViewController.swift; sourceTree = "<group>"; };
 		9AB66BB31E952F260088368A /* NewRaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRaceViewController.swift; sourceTree = "<group>"; };
 		9AB66BB51E952F340088368A /* RaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceTableViewController.swift; sourceTree = "<group>"; };
 		9AC085E51E93ED7D00C8D687 /* Rose_RaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rose_RaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				9A7A78721E967B9100C19EEE /* Charts.xcodeproj */,
 				9AC085E81E93ED7D00C8D687 /* AppDelegate.swift */,
 				9AC085EC1E93ED7D00C8D687 /* Main.storyboard */,
+				9A7A78871E97285F00C19EEE /* ImportViewController.swift */,
 				9A7A785A1E966C9000C19EEE /* MainViewController.swift */,
 				9A7A78831E96AB5000C19EEE /* ElapsedTimeFormatter.swift */,
 				9A7A785C1E96735200C19EEE /* StatsViewController.swift */,
@@ -260,6 +263,7 @@
 				9AC085FB1E93F12100C8D687 /* Race.swift in Sources */,
 				9A7A785D1E96735200C19EEE /* StatsViewController.swift in Sources */,
 				9AC085E91E93ED7D00C8D687 /* AppDelegate.swift in Sources */,
+				9A7A78881E97285F00C19EEE /* ImportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

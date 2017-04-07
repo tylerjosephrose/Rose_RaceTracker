@@ -57,11 +57,11 @@ class Person: NSObject {
 	private func loadPerson() {
 		let fileURL = getFileURL()
 		
-		do {
+		/*do {
 			try FileManager.default.removeItem(at: fileURL)
 		} catch _ as NSError {
 			print("Deletion failed")
-		}
+		}*/
 		if (FileManager.default.fileExists(atPath: fileURL.path)) {
 			// Load Contents
 			//events.removeAll()

@@ -39,16 +39,24 @@ class StatsViewController: UIViewController, ChartViewDelegate {
 		prLbl.text = "PR: " + Race.timeToString(time: currentEvent.getPR()!)
 		sbLbl.text = ""
 		var i = 0
+		var sbs = [String]()
 		for best in currentEvent.getSB() {
-			let sb = String(best.key) + ": " + Race.timeToString(time: best.value) + "\n"
-			sbLbl.text?.append(sb)
+			sbs.append(String(best.key) + ": " + Race.timeToString(time: best.value) + "\n")
 			i += 1
 		}
+		sbs.sort()
+		var j = sbs.count
+		for _ in 0..<sbs.count {
+			j -= 1
+			sbLbl.text?.append(sbs[j])
+		}
+		let index = sbLbl.text?.index(before: (sbLbl.text?.endIndex)!)
+		sbLbl.text?.remove(at: index!)
 		sbLbl.numberOfLines = i
 	}
 	
 	private func setupChart() {
-		lineChartView.delegate = self as? ChartViewDelegate
+		lineChartView.delegate = self as ChartViewDelegate
 		lineChartView.chartDescription?.text = ""
 		lineChartView.noDataText = "No data provided"
 		// Setup Data for chart
@@ -90,7 +98,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
 		lineChartView.leftAxis.inverted = true
 		lineChartView.rightAxis.drawLabelsEnabled = false
 		lineChartView.data = data
-		lineChartView.animate(xAxisDuration: 1.0, easingOption: .easeInBounce)
+		lineChartView.animate(xAxisDuration: 1.0, easingOption: .easeInSine)
 	}
 	
 	
